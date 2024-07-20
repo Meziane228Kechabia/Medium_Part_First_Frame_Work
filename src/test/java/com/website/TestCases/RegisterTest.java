@@ -30,7 +30,8 @@ public void registerSetup() {
 	homePage = new HomePage(driver);
 	registerPage = homePage.clickOnRegisterLink();	
 }
-@Test(priority=1)
+@Test(priority = 1)// this test case will fell because the registration with the same email alreasy exists
+
 public void verifyRegisterWithAllDetails() {
 	accountSuccessPage = registerPage.navigatingToAccountSuccessPage(
 			prop.getProperty("firstname"),
@@ -45,4 +46,5 @@ public void verifyRegisterWithAllDetails() {
 public void tearDown() {
 	driver.quit();
 }
+//Should work fine
 }
